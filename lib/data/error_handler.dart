@@ -14,12 +14,13 @@ class ErrorHandler implements Exception {
       if (error.toString().contains('SocketException')) {
         failure = Failure(DataSource.NO_INTERNET_CONNECTION.code,
             DataSource.NO_INTERNET_CONNECTION.message);
-      } else {
+      }
+      else {
         failure = _handleError(error);
       }
     } else {
       // default error
-      // debugPrint('444444');
+     // debugPrint('444444');
       failure = Failure(DataSource.DEFAULT.code, DataSource.DEFAULT.message);
     }
   }
@@ -53,6 +54,7 @@ Failure _handleError(DioError error) {
 }
 
 enum DataSource {
+
   CONNECT_TIMEOUT(message: 'Time out error, Try again later', code: -1),
   CANCEL(message: 'Request was cancelled, Try again later', code: -2),
   RECEIVE_TIMEOUT(message: 'Time out error, Try again later', code: -3),
