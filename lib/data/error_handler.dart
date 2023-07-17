@@ -54,7 +54,24 @@ Failure _handleError(DioError error) {
 }
 
 enum DataSource {
-
+  SUCCESS(message: 'success', code: 200), // success with data
+  NO_CONTENT(
+      message: 'success', code: 201), // success with no data (no content)
+  BAD_REQUEST(
+      message: 'Bad request, Try again later',
+      code: 400), // failure, API rejected request
+  FORBIDDEN(
+      message: 'Forbidden request, Try again later',
+      code: 403), // failure, API rejected request
+  UNAUTHORISED(
+      message: 'User is unauthorised, Try again later',
+      code: 401), // failure, user is not authorised
+  NOT_FOUND(
+      message: 'Some thing went wrong, Try again later',
+      code: 404), // failure, not found
+  INTERNAL_SERVER_ERROR(
+      message: 'Some thing went wrong, Try again later',
+      code: 500), // failure, crash in server side
   CONNECT_TIMEOUT(message: 'Time out error, Try again later', code: -1),
   CANCEL(message: 'Request was cancelled, Try again later', code: -2),
   RECEIVE_TIMEOUT(message: 'Time out error, Try again later', code: -3),

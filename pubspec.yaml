@@ -37,8 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
   provider: ^6.0.5
-  get_it: ^7.6.0
-  another_flushbar: ^1.12.30
   fluttertoast: ^8.2.2
   cached_network_image: ^3.2.3
 
